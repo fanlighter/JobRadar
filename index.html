@@ -90,6 +90,22 @@ body{
 }
 
 </style>
+
+<script>
+
+const TG_LINK = "https://t.me/offers_freelance_bot?start=landing";
+
+function goToTelegram() {
+
+    // здесь потом можно добавить метрику
+    // ym(XXXXXX,'reachGoal','telegram_click');
+
+    window.open(TG_LINK, "_blank");
+
+}
+
+</script>
+
 </head>
 
 <body>
@@ -98,7 +114,7 @@ body{
 
 <div class="card">
 
-<div class="banner">
+<div class="banner" onclick="goToTelegram()" style="cursor:pointer;">
 <img src="banner.png">
 </div>
 
@@ -120,7 +136,7 @@ body{
 🎯 Получай только подходящие заказы без лишнего шума
 </div>
 
-<a class="button" href="https://t.me/your_bot" target="_blank">
+<a class="button" onclick="goToTelegram()">
 
 <img src="telegram.svg">
 
