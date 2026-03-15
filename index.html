@@ -127,11 +127,7 @@ function goToTelegram() {
         const utm_campaign = getUTM("utm_campaign");
         const utm_content = getUTM("utm_content");
 
-        const payload =
-            clientID + "__" +
-            utm_source + "__" +
-            utm_campaign + "__" +
-            utm_content;
+        const payload = clientID;
 
         const tg_link =
             "https://t.me/offers_freelance_bot?start=" + payload;
