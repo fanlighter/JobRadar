@@ -128,9 +128,9 @@ function goToTelegram() {
         const utm_content = getUTM("utm_content");
 
         const payload =
-            clientID + "|" +
-            utm_source + "|" +
-            utm_campaign + "|" +
+            clientID + "__" +
+            utm_source + "__" +
+            utm_campaign + "__" +
             utm_content;
 
         const tg_link =
