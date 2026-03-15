@@ -15,7 +15,7 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/107711503" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-    
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -107,14 +107,36 @@ body{
 
 <script>
 
-const TG_LINK = "https://t.me/offers_freelance_bot?start=landing";
+
+function getUTM(name) {
+
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name) || "none";
+
+}
 
 function goToTelegram() {
 
-    // здесь потом можно добавить метрику
-    // ym(XXXXXX,'reachGoal','telegram_click');
+    ym(107711503, 'getClientID', function(clientID) {
 
-    window.open(TG_LINK, "_blank");
+        ym(107711503, 'reachGoal', 'telegram_click');
+
+        const utm_source = getUTM("utm_source");
+        const utm_campaign = getUTM("utm_campaign");
+        const utm_content = getUTM("utm_content");
+
+        const payload =
+            clientID + "|" +
+            utm_source + "|" +
+            utm_campaign + "|" +
+            utm_content;
+
+        const tg_link =
+            "https://t.me/offers_freelance_bot?start=" + payload;
+
+        window.open(tg_link, "_blank");
+
+    });
 
 }
 
@@ -173,6 +195,6 @@ window.addEventListener("load", function() {
     window.scrollTo(0, document.body.scrollHeight);
 });
 </script>
-    
+
 </body>
 </html>
